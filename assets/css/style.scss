@@ -1,0 +1,170 @@
+// CSS Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+// Body
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Message
+.message {
+    display: none;
+    color: yellow;
+    font-size: 3em;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 50px;
+}
+
+// Container
+.container {
+    width: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    .logo {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid silver;
+    }
+
+    .form {
+        padding: 0 40px;
+        box-sizing: border-box;
+
+        .text-password {
+            position: relative;
+            border-bottom: 2px solid #adadad;
+            margin: 30px 0;
+
+            input {
+                width: 100%;
+                height: 40px;
+                padding: 0 5px;
+                font-size: 16px;
+                background: none;
+                border: none;
+                outline: none;
+
+                &:focus ~ label,
+                &:valid ~ label {
+                    top: -5px;
+                    color: #2691d9;
+                }
+
+                &:focus ~ span::before,
+                &:valid ~ span::before {
+                    width: 100%;
+                }
+            }
+
+            label {
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                color: #adadad;
+                font-size: 16px;
+                pointer-events: none;
+                transition: 0.5s;
+            }
+
+            span::before {
+                content: "";
+                width: 0%;
+                height: 2px;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                background: #2691d9;
+                transition: 0.5s;
+            }
+        }
+
+        .forgot-password {
+            margin: -5px 0 20px 5px;
+            color: #a6a6a6;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            border: 1px solid;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+            color: #e9f4fb;
+            outline: none;
+            background: #2691d9;
+
+            &:hover {
+                background: #2980b9;
+                transition: 0.5s linear;
+            }
+        }
+
+        .sign-up-link {
+            margin: 30px 0;
+            color: #666666;
+            font-size: 16px;
+            text-align: center;
+
+            a {
+                color: #2691d9;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    // Container
+    .container {
+        width: 300px;
+
+        .form {
+            padding: 0 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    // Massage
+    .message {
+        display: block;
+    }
+
+    // Body
+    body {
+        background: none;
+        background-color: brown;
+    }
+
+    // .container
+    .container {
+        display: none;
+    }
+}
+
+
